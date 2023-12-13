@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Input Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <form action="/submit" method="post">
+        <div class="form-container">
+            <h2>Input Form</h2>
+            <div class="input-fields">
+                 {% for i in range(1, 11) %}
+                    {% if i == 2 %}
+                        <input type="contact" id="input{{ i }}" name="input{{ i }}" placeholder="Input {{ i }}"><br><br>
+                    {% else %}
+                        <input type="text" id="input{{ i }}" name="input{{ i }}" placeholder="Input {{ i }}"><br><br>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+</html>
